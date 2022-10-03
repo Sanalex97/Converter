@@ -54,6 +54,7 @@ public class CalcUI extends JFrame implements ActionListener{
                     String to = comboBoxTo.getSelectedItem().toString();
                     String fromCoord = comboBoxCoordFrom.getSelectedItem().toString();
                     String toCoord = comboBoxCoordTo.getSelectedItem().toString();
+
                     if(fromCoord.equals("B,L,H")){
                         // перевести градусы в радианы
                         x = x * Math.PI / 180;
@@ -68,11 +69,11 @@ public class CalcUI extends JFrame implements ActionListener{
                                 coordinates = new double[]{x,y,z};
                             }
                             else if(toCoord.equals("B,L,H")){
-                                coordinates = coordinateSystemManager.convertXYZtoBLH(from, x,y,z);
+                          //      coordinates = coordinateSystemManager.convertXYZtoBLH(from, x,y,z);
                             }
                         } else if(fromCoord.equals("B,L,H")){
                             if(toCoord.equals("X,Y,Z")){
-                                coordinates = coordinateSystemManager.convertBLHtoXYZ(from, x,y,z);
+                            //    coordinates = coordinateSystemManager.convertBLHtoXYZ(from, x,y,z);
                             }
                             else if(toCoord.equals("B,L,H")){
                                 coordinates = new double[]{x,y,z};
@@ -81,21 +82,21 @@ public class CalcUI extends JFrame implements ActionListener{
                     } else {    // если из одной в другую
                         if(fromCoord.equals("X,Y,Z")){
                             if(toCoord.equals("X,Y,Z")){
-                                coordinates = coordinateSystemManager.convertXYZ(from,to, x,y,z);
+                            //    coordinates = coordinateSystemManager.convertXYZ(from,to, x,y,z);
                             }
                             else if(toCoord.equals("B,L,H")){
-                                coordinates = coordinateSystemManager.convertXYZ(from,to, x,y,z);
-                                coordinates = coordinateSystemManager.convertXYZtoBLH(to, coordinates[0],coordinates[1],coordinates[2]);
+                         //       coordinates = coordinateSystemManager.convertXYZ(from,to, x,y,z);
+                          //      coordinates = coordinateSystemManager.convertXYZtoBLH(to, coordinates[0],coordinates[1],coordinates[2]);
                             }
                         } else if(fromCoord.equals("B,L,H")){
                             if(toCoord.equals("X,Y,Z")){
-                                coordinates = coordinateSystemManager.convertBLHtoXYZ(from, x,y,z);
-                                coordinates = coordinateSystemManager.convertXYZ(from,to, coordinates[0],coordinates[1],coordinates[2]);
+                           //     coordinates = coordinateSystemManager.convertBLHtoXYZ(from, x,y,z);
+                           //     coordinates = coordinateSystemManager.convertXYZ(from,to, coordinates[0],coordinates[1],coordinates[2]);
                             }
                             else if(toCoord.equals("B,L,H")){
-                                coordinates = coordinateSystemManager.convertBLHtoXYZ(from, x,y,z);
-                                coordinates = coordinateSystemManager.convertXYZ(from,to, coordinates[0],coordinates[1],coordinates[2]);
-                                coordinates = coordinateSystemManager.convertXYZtoBLH(to, coordinates[0],coordinates[1],coordinates[2]);
+                            //    coordinates = coordinateSystemManager.convertBLHtoXYZ(from, x,y,z);
+                            //    coordinates = coordinateSystemManager.convertXYZ(from,to, coordinates[0],coordinates[1],coordinates[2]);
+                            //    coordinates = coordinateSystemManager.convertXYZtoBLH(to, coordinates[0],coordinates[1],coordinates[2]);
                             }
                         }
                     }

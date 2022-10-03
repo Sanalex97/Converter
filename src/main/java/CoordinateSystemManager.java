@@ -2,12 +2,12 @@ import java.util.HashMap;
 
 public class CoordinateSystemManager {
 
-    private CoordinateConverter WGS84toPZ9011, PZ9011toWGS84, PZ9011toSK95, PZ9011toSK42, SK42toPZ9011, SK95toPZ9011, SK42toSK95, SK95toSK42, SK95toWGS84, WGS84toSK95, SK42toWGS84, WGS84toSK42;
+/*    private CoordinateConverter WGS84toPZ9011, PZ9011toWGS84, PZ9011toSK95, PZ9011toSK42, SK42toPZ9011, SK95toPZ9011, SK42toSK95, SK95toSK42, SK95toWGS84, WGS84toSK95, SK42toWGS84, WGS84toSK42;
     private CoordinateConverter WGS84, PZ9011, SK95, SK42;
-    private HashMap<String, CoordinateConverter> coordinateSystems, singleSystem;
+    private HashMap<String, CoordinateConverter> coordinateSystems, singleSystem;*/
 
     CoordinateSystemManager() {
-        //WGS84toPZ9011 = new CoordinateConverter(-0.013, 0.106, 0.022,-2.3, 3.54, -4.21, -0.008);
+     /*   //WGS84toPZ9011 = new CoordinateConverter(-0.013, 0.106, 0.022,-2.3, 3.54, -4.21, -0.008);
        //   WGS84toPZ9011 = new CoordinateConverter(+0.003, +0.001, 0, -0.019, +0.042, -0.002, 0); //эпоха 2001
         WGS84toPZ9011 = new CoordinateConverter(+0.0053, +0.0040, 0.0032, -0.035, +0.087, -0.036, 0); // эпоха 2001
         PZ9011toWGS84 = new CoordinateConverter(0.013, -0.106, -0.022, 2.3, -3.54, 4.21, 0.008); // эпоха 2010
@@ -60,5 +60,6 @@ public class CoordinateSystemManager {
 
     public double[] convertXYZtoBLH(String from, double x, double y, double z) {
         return singleSystem.get(from).convertXYZtoBLH(x, y, z);
+    }*/
     }
 }
