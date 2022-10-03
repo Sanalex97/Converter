@@ -1,7 +1,8 @@
+package Converters;
+
 public class TypeConverter {
     private int id;
     private String systemA;
-    private String systemB;
     private double deltaX; //a, alpha, e;
     private double deltaY;
     private double deltaZ;
@@ -9,6 +10,16 @@ public class TypeConverter {
     private double omegaY;
     private double omegaZ;
     private double m;
+
+    public TypeConverter(double deltaX, double deltaY, double deltaZ, double omegaX, double omegaY, double omegaZ, double m) {
+        this.deltaX = deltaX;
+        this.deltaY = deltaY;
+        this.deltaZ = deltaZ;
+        this.omegaX = omegaX / 1000 * Math.PI / 3600 / 180;;
+        this.omegaY = omegaY / 1000 * Math.PI / 3600 / 180;;
+        this.omegaZ = omegaZ / 1000 * Math.PI / 3600 / 180;;
+        this.m = m / 1000000;
+    }
 
     public TypeConverter() {
     }
@@ -19,10 +30,6 @@ public class TypeConverter {
 
     public String getSystemA() {
         return systemA;
-    }
-
-    public String getSystemB() {
-        return systemB;
     }
 
     public double getDeltaX() {
@@ -58,7 +65,6 @@ public class TypeConverter {
         return "TypeConverter{" +
                 "id=" + id +
                 ", systemA='" + systemA + '\'' +
-                ", systemB='" + systemB + '\'' +
                 ", deltaX=" + deltaX +
                 ", deltaY=" + deltaY +
                 ", deltaZ=" + deltaZ +

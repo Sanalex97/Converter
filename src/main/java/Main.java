@@ -1,3 +1,4 @@
+import Converters.TypeConverter;
 import com.opencsv.CSVReader;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
@@ -13,16 +14,16 @@ public class Main {
     private static HashMap<String, TypeConverter> translateTableCoordinateSystem = new HashMap<>();
 
     public static void main(String[] args) {
-       if(init()){
+        if (init()) {
 
-       }
+        }
     }
 
     private static boolean init() {
         try (CSVReader csvReader = new CSVReader(new FileReader("src/main/resources/DB/ConverterPSK.csv"))) {
             ColumnPositionMappingStrategy<TypeConverter> strategy = new ColumnPositionMappingStrategy<>();
             strategy.setType(TypeConverter.class);
-            strategy.setColumnMapping("id", "systemA", "systemB", "deltaX", "deltaY",
+            strategy.setColumnMapping("id", "systemA", "deltaX", "deltaY",
                     "deltaZ", "omegaX", "omegaY", "omegaZ", "m");
 
             CsvToBean<TypeConverter> csv = new CsvToBeanBuilder<TypeConverter>(csvReader)
@@ -31,7 +32,7 @@ public class Main {
 
             List<TypeConverter> list = csv.parse();
             for (TypeConverter typeConverter : list) {
-                translateTableCoordinateSystem.put(typeConverter.getSystemA() + "to" + typeConverter.getSystemB(), typeConverter);
+                translateTableCoordinateSystem.put(typeConverter.getSystemA(), typeConverter);
             }
 
             return true;
