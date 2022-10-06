@@ -4,19 +4,25 @@ import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
+
+import javax.swing.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 public class Main {
-    private static CoordinateSystemManager coordinateSystemManager;
     private static HashMap<String, TypeConverter> translateTableCoordinateSystem = new HashMap<>();
 
     public static void main(String[] args) {
-        if (init()) {
 
-        }
+        init();
+        System.out.println("Привет!!");
+        JFrame frame = new JFrame("CalcUI");
+        frame.setContentPane(new CalcUI().rootPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     private static boolean init() {
@@ -31,6 +37,7 @@ public class Main {
                     .build();
 
             List<TypeConverter> list = csv.parse();
+
             for (TypeConverter typeConverter : list) {
                 translateTableCoordinateSystem.put(typeConverter.getSystemA(), typeConverter);
             }

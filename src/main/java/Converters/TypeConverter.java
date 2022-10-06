@@ -15,9 +15,9 @@ public class TypeConverter {
         this.deltaX = deltaX;
         this.deltaY = deltaY;
         this.deltaZ = deltaZ;
-        this.omegaX = omegaX / 1000 * Math.PI / 3600 / 180;;
-        this.omegaY = omegaY / 1000 * Math.PI / 3600 / 180;;
-        this.omegaZ = omegaZ / 1000 * Math.PI / 3600 / 180;;
+        this.omegaX = omegaX ;//Math.PI / 3600 / 180;;
+        this.omegaY = omegaY;//Math.PI / 3600 / 180;;
+        this.omegaZ = omegaZ;//Math.PI / 3600 / 180;;
         this.m = m / 1000000;
     }
 
@@ -45,15 +45,15 @@ public class TypeConverter {
     }
 
     public double getOmegaX() {
-        return omegaX;
+        return (omegaX / 1000) * 4.85 / 1_000_000;
     }
 
     public double getOmegaY() {
-        return omegaY;
+        return (omegaY / 1000) * 4.85 / 1_000_000;
     }
 
     public double getOmegaZ() {
-        return omegaZ;
+        return (omegaZ / 1000) * 4.85 / 1_000_000;
     }
 
     public double getM() {

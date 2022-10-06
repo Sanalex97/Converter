@@ -34,7 +34,7 @@
         </constraints>
         <properties>
           <horizontalAlignment value="0"/>
-          <text value=""/>
+          <text value="3622046.2262409376"/>
           <toolTipText value=""/>
         </properties>
       </component>
@@ -46,6 +46,7 @@
         </constraints>
         <properties>
           <horizontalAlignment value="0"/>
+          <text value="1615441.4659707926"/>
           <toolTipText value=""/>
         </properties>
       </component>
@@ -57,6 +58,7 @@
         </constraints>
         <properties>
           <horizontalAlignment value="0"/>
+          <text value="4978425.8729268145"/>
           <toolTipText value=""/>
         </properties>
       </component>
